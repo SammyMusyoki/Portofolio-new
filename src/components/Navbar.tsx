@@ -14,7 +14,7 @@ const Navbar = () => {
           <Logo />
         </div>
         <div>
-          <p><a href="/blog">Blog</a></p>
+          <p><a href="#">Blog</a></p>
         </div>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
