@@ -4,6 +4,8 @@ import { useTheme } from "next-themes"
 import { Button } from "@/components/ui/button";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import Logo from "./Logo";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "./ui/tooltip";
+import Link from "next/link";
 
 const Navbar = () => {
   const { setTheme } = useTheme()
@@ -14,7 +16,18 @@ const Navbar = () => {
           <Logo />
         </div>
         <div>
-          <p><a href="#">Blog</a></p>
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger>
+                <div className="border px-2 py-1 rounded">
+                  <Link href="#" className="text-xs">Blog</Link>
+                </div>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>Coming Soon</p>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
         </div>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
