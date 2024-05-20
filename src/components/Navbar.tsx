@@ -1,5 +1,4 @@
 "use client"
-
 import { Moon, Sun } from "lucide-react"
 import { useTheme } from "next-themes"
 import { Button } from "@/components/ui/button";
@@ -13,6 +12,9 @@ const Navbar = () => {
         <div className="flex justify-between sticky bg-opacity-10 items-center border-border border  p-4 rounded-xl shadow">
         <div className="flex">
           <Logo />
+        </div>
+        <div>
+          <p><a href="/blog">Blog</a></p>
         </div>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>

@@ -1,4 +1,4 @@
-'use client'
+"use client"
 
 import React, { useMemo } from 'react'
 import Block from './Block'
@@ -29,7 +29,7 @@ const HeaderBlock = () => {
                 I&apos;m a FullStack Software Developer and I build cool websites like this one.
             </span>
         </h1>
-        <Link href='' className='flex items-center gap-1 text-primary hover:underline'>Contact Me
+        <Link href='/login' className='flex items-center gap-1 text-primary hover:underline'>Contact Me
         <ArrowRight size={16}/>
         </Link>
     </Block>

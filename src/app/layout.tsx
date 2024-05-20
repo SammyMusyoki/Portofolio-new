@@ -5,11 +5,46 @@ import { ThemeProvider } from "@/components/theme-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
-  title: "Sammy Musyoki",
-  description: "This is my personal website where i showcase my work.",
-};
+const APP_NAME = "Sammy Musyoki App";
+const APP_DEFAULT_TITLE = "SammyMusyoki";
+const APP_TITLE_TEMPLATE = "%s -Portfolio  App";
+const APP_DESCRIPTION = "This is my personal website where i showcase my work.";
 
+export const metadata: Metadata = {
+  applicationName: APP_NAME,
+  title: {
+    default: APP_DEFAULT_TITLE,
+    template: APP_TITLE_TEMPLATE,
+  },
+  description: APP_DESCRIPTION,
+  manifest: "/manifest.json",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: APP_DEFAULT_TITLE,
+    // startUpImage: [],
+  },
+  formatDetection: {
+    telephone: false,
+  },
+  openGraph: {
+    type: "website",
+    siteName: APP_NAME,
+    title: {
+      default: APP_DEFAULT_TITLE,
+      template: APP_TITLE_TEMPLATE,
+    },
+    description: APP_DESCRIPTION,
+  },
+  twitter: {
+    card: "summary",
+    title: {
+      default: APP_DEFAULT_TITLE,
+      template: APP_TITLE_TEMPLATE,
+    },
+    description: APP_DESCRIPTION,
+  },
+};
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -17,9 +52,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <ThemeProvider attribute='class' defaultTheme='system' enableSystem disableTransitionOnChange>
-        <body className={inter.className}>{children}</body>
-      </ThemeProvider>
+        <body className={inter.className}>
+          <ThemeProvider attribute='class' defaultTheme='system' enableSystem disableTransitionOnChange>
+              {children}
+          </ThemeProvider>
+        </body>
     </html>
   );
 }
