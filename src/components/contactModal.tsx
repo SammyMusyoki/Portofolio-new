@@ -23,8 +23,9 @@ const ContactModal = ({ isOpenModal }: modalProps) => {
     const [isLastQuestion, setIsLastQuestion] = useState<boolean>(false);
     const [showButtons, setShowButtons] = useState<boolean>(false);
 
-    const handleInputChange = (e: React.FormEvent<HTMLInputElement>) => {
-        setInputValue(e.target.value)
+    const handleInputChange = (e: React.ChangeEvent<EventTarget>) => {
+      const target = e.target as HTMLInputElement;
+        setInputValue(target.value)
     };
 
     const updateAnswer = () => {
