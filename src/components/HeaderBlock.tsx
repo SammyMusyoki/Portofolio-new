@@ -1,15 +1,20 @@
 "use client"
 
-import React, { useMemo } from 'react'
+import React, { useMemo, useState } from 'react'
 import Block from './Block'
 import Image from 'next/image'
 import { createAvatar } from '@dicebear/core'
 import { loreleiNeutral } from '@dicebear/collection'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
+import { Button } from './ui/button'
+import ContactModal from './contactModal'
 
+type modalProps = {
+    isOpenModal: React.Dispatch<React.SetStateAction<boolean>>
+}
 
-const HeaderBlock = () => {
+const HeaderBlock = ({ isOpenModal}: modalProps) => {
     const avatar = useMemo(() => {
         return createAvatar(
             loreleiNeutral, {
@@ -18,8 +23,12 @@ const HeaderBlock = () => {
             }
         ).toDataUriSync();
     }, [])
+
+    const handlemodal = () => {
+        isOpenModal(true)
+    }
   return (
-    <Block className='col-span-12 row-span-2 md:col-span-6'>
+    <Block className='col-span-12 row-span-2 md:col-span-6 relative'>
         <Image src={avatar} alt='avator'
         className='mb-4 rounded-full border-2 border-border bg-primary' width='50' height='50'
         />
@@ -29,9 +38,14 @@ const HeaderBlock = () => {
                 I&apos;m a FullStack Software Developer and I build cool websites like this one.
             </span>
         </h1>
-        <Link href='/login' className='flex items-center gap-1 text-primary hover:underline'>Contact Me
-        <ArrowRight size={16}/>
-        </Link>
+        <Button variant='default'
+        onClick={handlemodal}
+        >
+            <p className='flex items-center gap-1'>Contact Me
+            <ArrowRight size={16}/>
+            </p>
+        </Button>
+
     </Block>
   )
 }
