@@ -1,29 +1,29 @@
-import { allDocs } from 'contentlayer/generated';
-import { notFound } from 'next/navigation';
-import React from 'react'
+// import { allDocs } from 'contentlayer/generated';
+// import { notFound } from 'next/navigation';
+// import React from 'react'
 
-interface pageProps {
-    params: {
-        slug: string;
-    }
-}
+// interface pageProps {
+//     params: {
+//         slug: string;
+//     }
+// }
 
-async function getDocFromParams(slug: string) {
-    const doc = allDocs.find((doc) => doc.slugAsParams === slug)
+// async function getDocFromParams(slug: string) {
+//     const doc = allDocs.find((doc) => doc.slugAsParams === slug)
 
-    if (!doc) notFound()
+//     if (!doc) notFound()
 
-    return doc
-}
+//     return doc
+// }
 
-const Page = async ({ params }: pageProps) => {
+// const Page = async ({ params }: pageProps) => {
 
-    const doc = await getDocFromParams(params.slug)
-  return (
-    <div>
+//     const doc = await getDocFromParams(params.slug)
+//   return (
+//     <div>
       
-    </div>
-  )
-}
+//     </div>
+//   )
+// }
 
-export default Page
+// export default Page
