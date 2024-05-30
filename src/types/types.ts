@@ -1,3 +1,6 @@
+import React from "react";
+import { MotionProps } from 'framer-motion';
+
 interface Questions {
     id: number;
     name: string;
@@ -13,7 +16,18 @@ interface MessageContextValue {
     clearMessage: () => void;
 }
 
+type BentoGridItemProps = {
+    className: string;
+    slug: string;
+    date: string;
+    tags: string;
+    title?: string;
+    description?: string;
+    image?: HTMLImageElement | React.ReactNode;
+} & MotionProps
+
 export type {
     Questions,
     MessageContextValue,
+    BentoGridItemProps,
 }
