@@ -3,6 +3,9 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/toaster";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -61,7 +64,13 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+        <main className="flex min-h-screen relative flex-col items-center justify-between px-4 py-12 bg-background">
+          <div className="w-full max-w-4xl h-full">
+            <Navbar />
+              {children}
+            <Footer />
+          </div>
+        </main>
         </ThemeProvider>
         <Toaster />
       </body>

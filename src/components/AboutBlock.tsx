@@ -3,7 +3,7 @@ import Block from './Block'
 
 const AboutBlock = () => {
   return (
-    <Block className='col-span-12 text-3xl leading-snug'>
+    <Block className='col-span-12 text-xl leading-snug'>
       <p className='font-medium text-primary underline'>About</p>
       <p className='text-primary'>
         My passion is building cool stuff. {" "}

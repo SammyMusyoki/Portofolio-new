@@ -1,0 +1,15 @@
+[
+  {
+    "slug": "blog/open-graph-images",
+    "title": "Generating Dynamic Open Graph Images in NextJs",
+    "description": "The open graph images serve as the preview thumbnail, giving Users a glimpse of the content before they decide to click on the link.",
+    "date": "2024-05-26T00:00:00.000Z",
+    "published": true,
+    "tags": [
+      "NextJs",
+      "mdx"
+    ],
+    "body": "const{jsx:e}=arguments[0];function _createMdxContent(n){const t={p:\"p\",...n.components};return e(t.p,{children:\"Open Graph Images are meta tags that define the visual representation of a webpage when shared on social media platforms like Facebook, Twitter, LinkedIn and others.\"})}return{default:function(n={}){const{wrapper:t}=n.components||{};return t?e(t,{...n,children:e(_createMdxContent,{...n})}):_createMdxContent(n)}};",
+    "slugAsParams": "open-graph-images"
+  }
+]

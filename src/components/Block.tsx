@@ -30,7 +30,7 @@ const Block = ({ className, children, ...props}: BlockProps) => {
         stiffness: 400,
         damping: 50,
     }}
-    className={cn("col-span-4 rounded-lg border border-border bg-accent p-6 mt-4", className)}
+    className={cn("col-span-4 rounded-lg border p-6 mt-4", className)}
     {...props}
     >
         {children}

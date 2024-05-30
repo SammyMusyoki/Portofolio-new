@@ -79,7 +79,7 @@ const ContactModal = ({ isOpenModal }: modalProps) => {
 
 
   return (
-      <Block className="gap-2" style={{ fontFamily: "monospace" }}>
+      <Block className="gap-2 bg-accent" style={{ fontFamily: "monospace" }}>
         <div className="flex items-center justify-between bg-background p-2 rounded-t-lg">
           <div className="flex gap-1">
             <p className="w-3 h-3 rounded-full bg-red-500"></p>
