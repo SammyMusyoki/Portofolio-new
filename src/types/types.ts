@@ -17,13 +17,13 @@ interface MessageContextValue {
 }
 
 type BentoGridItemProps = {
-    className: string;
+    className?: string;
     slug: string;
     date: string;
-    tags: string;
+    tags: string[] | undefined;
     title?: string;
     description?: string;
-    image?: HTMLImageElement | React.ReactNode;
+    image?: string | React.ReactNode;
 } & MotionProps
 
 export type {

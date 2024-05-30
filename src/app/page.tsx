@@ -10,8 +10,7 @@ import { motion } from "framer-motion";
 import { sortBlogs } from "@/lib/utils";
 import { Blogs } from "velite/content";
 import { BentoGrid, BentoGridItem } from "@/components/bento/bento-grid";
-import { Skeleton } from "./blog/page";
-
+import Skeleton from "@/components/Skeleton/ImageSkeleton";
 
 
 export default function Home() {
@@ -38,7 +37,7 @@ export default function Home() {
         </h2>
         <BentoGrid className="max-w-4xl mx-auto">
           {latestBlogs.map((blog, i) => {
-            const { slug, date, title, description, image } = blog
+            const { slug, date, title, description, tags } = blog
             return (
               <BentoGridItem
                 key={i}
@@ -46,8 +45,9 @@ export default function Home() {
                 title={title}
                 date={date}
                 description={description}
-                image={!image ? <Skeleton /> : image}
-              />
+                image={<Skeleton />}
+                tags={tags}
+                />
             )
           })}
         </BentoGrid>

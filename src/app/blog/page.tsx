@@ -2,13 +2,12 @@
 
 import React from 'react'
 import { motion } from 'framer-motion';
-import Navbar from '@/components/Navbar';
 import { PsalmsHeader } from '@/components/PsalmsHeader';
 import { BentoGrid, BentoGridItem } from '@/components/bento/bento-grid';
 
 import { Blogs } from "velite/content"
 import { sortBlogs } from '@/lib/utils';
-import Logo from '@/components/Logo';
+import Skeleton from '@/components/Skeleton/ImageSkeleton';
 
 const BLOGS_PER_PAGE = 7;
 
@@ -40,7 +39,7 @@ const Page = ({searchParams}: BlogProps) => {
         {displayBlogs?.length > 0 ? (
           <BentoGrid className="max-w-4xl mx-auto">
             {displayBlogs.map((blog, i) => {
-              const { slug, date, title, description, image } = blog
+              const { slug, date, title, description, tags } = blog
               return (
                 <BentoGridItem
                   key={i}
@@ -48,9 +47,9 @@ const Page = ({searchParams}: BlogProps) => {
                   title={title}
                   date={date}
                   description={description}
-                  image={!image ? <Skeleton /> : image}
-                  className={i === 3 || i === 6 ? "md:col-span-2" : ""}
-                />
+                  image={<Skeleton />}
+                  className={i === 3 || i === 6 ? "md:col-span-2" : ""} 
+                  tags={tags}                />
               )
           })}
           </BentoGrid>
@@ -65,8 +64,3 @@ const Page = ({searchParams}: BlogProps) => {
 
 export default Page
 
-export const Skeleton = () => (
-  <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-neutral-200 dark:from-neutral-900 dark:to-neutral-800 to-neutral-100">
-    <Logo className='opacity-30'/>
-  </div>
-);

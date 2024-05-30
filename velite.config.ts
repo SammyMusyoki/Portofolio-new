@@ -13,7 +13,6 @@ const Blogs = defineCollection({
     pattern: "blog/**/*.mdx",
     schema: s.object({
         slug: s.path(),
-        image: s.image().optional(),
         title: s.string().max(150),
         description: s.string().max(1500).optional(),
         date: s.isodate(),
