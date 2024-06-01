@@ -4,24 +4,59 @@ import React from 'react'
 import { Blogs } from 'velite/content';
 import { notFound } from "next/navigation";
 import { formatDate } from '@/lib/utils';
+import { IPageProps } from '@/types/types';
+import { siteConfig } from '@/config/site';
+import { Metadata } from 'next';
 
-interface PageProps {
-    params: {
-        slug: string[]
-    }
-};
-
-async function getPostFromParams(params: PageProps['params']) {
+async function getPostFromParams(params: IPageProps['params']) {
     const slug = params?.slug?.join("/");
     const blog = Blogs.find((blog) => blog.slugAsParams === slug);
 
     return blog
 }
 
-export async function generateStaticParams(): Promise<PageProps["params"][]> {
+export async function generateStaticParams(): Promise<IPageProps["params"][]> {
     return Blogs.map((blog) => ({ slug: blog.slugAsParams.split("/")}))
 }
-const Page = async ({params}: PageProps) => {
+
+export async function generateMetadata ({ params }: IPageProps): Promise<Metadata> {
+    const blog = await getPostFromParams(params);
+
+    if (!blog) {
+        return {}
+    };
+
+    const ogSearchParams = new URLSearchParams()
+    ogSearchParams.set("title", blog.title);
+
+    return {
+        title: blog.title,
+        description: blog.description,
+        authors: { name: siteConfig.author },
+        openGraph: {
+            title: blog.title,
+            description: blog.description,
+            type: "article",
+            url: blog.slug,
+            images: [
+                {
+                    url: `/api/og/?${ogSearchParams.toString()}`,
+                    width: 1200,
+                    height: 630,
+                    alt: blog.title
+                },
+            ],
+        },
+        twitter: {
+            card: "summary_large_image",
+            title: blog.title,
+            description: blog.description,
+            images: [`/api/og?${ogSearchParams.toString()}`]
+        }
+    }
+}
+
+const Page = async ({params}: IPageProps) => {
 
     const blog = await getPostFromParams(params);
 

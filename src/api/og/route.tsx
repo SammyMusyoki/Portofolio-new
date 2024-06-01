@@ -1,5 +1,7 @@
 import { NextRequest } from "next/server";
 import { ImageResponse } from "next/og";
+import Logo from "@/components/Logo";
+import { siteConfig } from "@/config/site";
 
 export const runtime = 'edge'
 
@@ -22,43 +24,21 @@ export async function GET(req: NextRequest) {
 
         return new ImageResponse(
           (
-            <div
-              style={{
-                height: "100%",
-                width: "100%",
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                justifyContent: "center",
-                backgroundColor: "white",
-              }}
-            >
-              <div tw="bg-gray-50 flex">
-                <div tw="flex flex-col md:flex-row w-full py-12 px-4 md:items-center justify-between p-8">
-                  <h2 tw="flex flex-col text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 text-left">
-                    <span>Ready to dive in?</span>
-                    <span tw="text-indigo-600">
-                      Start your free trial today.
-                    </span>
-                  </h2>
-                  <div tw="mt-8 flex md:mt-0">
-                    <div tw="flex rounded-md shadow">
-                      <a
-                        href="#"
-                        tw="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-5 py-3 text-base font-medium text-white"
-                      >
-                        Get started
-                      </a>
-                    </div>
-                    <div tw="ml-3 flex rounded-md shadow">
-                      <a
-                        href="#"
-                        tw="flex items-center justify-center rounded-md border border-transparent bg-white px-5 py-3 text-base font-medium text-indigo-600"
-                      >
-                        Learn more
-                      </a>
-                    </div>
-                  </div>
+            <div tw="flex relative flex-col p-12 w-full h-full items-start text-black bg-white">
+              <div tw="flex items-center">
+                <Logo />
+                <p tw="ml-2 font-bold text-2xl">{siteConfig.name}</p>
+              </div>
+              <div tw="flex flex-col flex-1 py-10">
+                <div tw="flex text-xl uppercase font-bold tracking-tight font-normal">
+                  BLOG POST
+                </div>
+                <div tw="flex text-[80px] font-bold text-[50px]">{heading}</div>
+              </div>
+              <div tw="flex items-center w-full justify-between">
+                <div tw="flex text-xl">{siteConfig.links.personalSite}</div>
+                <div tw="flex items-center text-xl">
+                  <div tw="flex ml-2">{siteConfig.links.github}</div>
                 </div>
               </div>
             </div>
@@ -77,6 +57,6 @@ export async function GET(req: NextRequest) {
           }
         );
     } catch (error) {
-        
+        return new Response("Failed to generate image", { status: 500})
     }
 }
