@@ -6,6 +6,7 @@ import { notFound } from "next/navigation";
 import { formatDate } from '@/lib/utils';
 import { IPageProps } from '@/types/types';
 import { siteConfig } from '@/config/site';
+import { Metadata } from 'next';
 
 async function getPostFromParams(params: IPageProps['params']) {
     const slug = params?.slug?.join("/");
@@ -18,7 +19,7 @@ export async function generateStaticParams(): Promise<IPageProps["params"][]> {
     return Blogs.map((blog) => ({ slug: blog.slugAsParams.split("/")}))
 }
 
-export async function generateMetadata ({ params }: IPageProps) {
+export async function generateMetadata ({ params }: IPageProps): Promise<Metadata> {
     const blog = await getPostFromParams(params);
 
     if (!blog) {
@@ -35,7 +36,7 @@ export async function generateMetadata ({ params }: IPageProps) {
         openGraph: {
             title: blog.title,
             description: blog.description,
-            type: "blog",
+            type: "article",
             url: blog.slug,
             images: [
                 {
@@ -46,7 +47,7 @@ export async function generateMetadata ({ params }: IPageProps) {
                 },
             ],
         },
-        x: {
+        twitter: {
             card: "summary_large_image",
             title: blog.title,
             description: blog.description,
