@@ -1,4 +1,6 @@
+import { IPageProps } from "@/types/types";
 import { type ClassValue, clsx } from "clsx"
+import { Metadata } from "next";
 import { twMerge } from "tailwind-merge"
 import { Blogs } from 'velite/content';
 

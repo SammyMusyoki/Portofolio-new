@@ -12,7 +12,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="flex justify-between sticky bg-opacity-10 items-center border-border border  p-4 rounded-xl shadow">
+      <div className="flex justify-between sticky bg-opacity-10 items-center p-4">
         <div className="flex">
           <Logo />
         </div>

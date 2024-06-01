@@ -26,8 +26,14 @@ type BentoGridItemProps = {
     image?: string | React.ReactNode;
 } & MotionProps
 
+interface IPageProps {
+    params: {
+        slug: string[]
+    }
+}
 export type {
     Questions,
     MessageContextValue,
     BentoGridItemProps,
+    IPageProps,
 }
