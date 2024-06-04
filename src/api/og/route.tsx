@@ -1,7 +1,7 @@
 import { NextRequest } from "next/server";
 import { ImageResponse } from "next/og";
 import Logo from "@/components/Logo";
-import { siteConfig } from "@/config/site";
+import { siteMetadata } from "@/config/site-metadata";
 
 export const runtime = 'edge'
 
@@ -27,7 +27,7 @@ export async function GET(req: NextRequest) {
             <div tw="flex relative flex-col p-12 w-full h-full items-start text-black bg-white">
               <div tw="flex items-center">
                 <Logo />
-                <p tw="ml-2 font-bold text-2xl">{siteConfig.name}</p>
+                <p tw="ml-2 font-bold text-2xl">{siteMetadata.title}</p>
               </div>
               <div tw="flex flex-col flex-1 py-10">
                 <div tw="flex text-xl uppercase font-bold tracking-tight font-normal">
@@ -36,9 +36,9 @@ export async function GET(req: NextRequest) {
                 <div tw="flex text-[80px] font-bold text-[50px]">{heading}</div>
               </div>
               <div tw="flex items-center w-full justify-between">
-                <div tw="flex text-xl">{siteConfig.links.personalSite}</div>
+                <div tw="flex text-xl">{siteMetadata.siteUrl}</div>
                 <div tw="flex items-center text-xl">
-                  <div tw="flex ml-2">{siteConfig.links.github}</div>
+                  <div tw="flex ml-2">{siteMetadata.github}</div>
                 </div>
               </div>
             </div>

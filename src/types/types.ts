@@ -31,9 +31,46 @@ interface IPageProps {
         slug: string[]
     }
 }
+
+interface GiscusConfig {
+    themeURL?: string
+    theme?: string
+    darkTheme?: string
+    mapping: string
+    repo: string
+    repositoryId: string
+    category: string
+    categoryId: string
+    reactions: string
+    metadata: string
+    inputPosition?: string
+    lang: string
+}
+
+interface CoreConfig {
+    title: string
+    author?: string
+    headerTitle?: string
+    description: string
+    language: string
+    /** light and dark */
+    theme: "system" | "dark" | "light"
+    siteUrl: string
+    siteRepo: string
+    image?: string
+    socialBanner?: string
+    email: string
+    github: string
+    twitter: string
+    facebook?: string
+    linkedin: string
+    locale: string
+}
 export type {
     Questions,
     MessageContextValue,
     BentoGridItemProps,
     IPageProps,
+    GiscusConfig,
+    CoreConfig
 }

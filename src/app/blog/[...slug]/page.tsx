@@ -5,8 +5,9 @@ import { Blogs } from 'velite/content';
 import { notFound } from "next/navigation";
 import { formatDate } from '@/lib/utils';
 import { IPageProps } from '@/types/types';
-import { siteConfig } from '@/config/site';
+import { siteMetadata } from '@/config/site-metadata';
 import { Metadata } from 'next';
+import Comments from '@/components/comments';
 
 async function getPostFromParams(params: IPageProps['params']) {
     const slug = params?.slug?.join("/");
@@ -32,7 +33,7 @@ export async function generateMetadata ({ params }: IPageProps): Promise<Metadat
     return {
         title: blog.title,
         description: blog.description,
-        authors: { name: siteConfig.author },
+        authors: { name: siteMetadata.author },
         openGraph: {
             title: blog.title,
             description: blog.description,
@@ -64,13 +65,19 @@ const Page = async ({params}: IPageProps) => {
         notFound()
     }
   return (
-    <article className="h-full mt-10 border p-4 rounded-lg">
-        <div className='text-center mb-8 space-y-2'>
-            <span className=''>{formatDate(blog.date)}</span>
-            <h1 className='text-3xl font-bold'>{blog.title}</h1>
-        </div>
-        <Mdx code={blog.body}/>
-    </article>
+    <main className='flex flex-col'>
+        <article className="h-full mt-10 border p-4 rounded-lg">
+            <div className='text-center mb-8 space-y-2'>
+                <span className=''>{formatDate(blog.date)}</span>
+                <h1 className='text-3xl font-bold'>{blog.title}</h1>
+            </div>
+            <Mdx code={blog.body}/>
+        </article>
+        <Comments />
+    </main>
+
+
+
   );
 }
 

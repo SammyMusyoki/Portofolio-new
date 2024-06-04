@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import AboutBlock from "@/components/AboutBlock";
-import ContactModal from "@/components/contactModal";
+import ContactModal from "@/components/Modals/contactModal";
 import HeaderBlock from "@/components/HeaderBlock";
 import LocationBlock from "@/components/LocationBlock";
 import SocialsBlock from "@/components/SocialsBlock";
@@ -11,6 +11,7 @@ import { sortBlogs } from "@/lib/utils";
 import { Blogs } from "velite/content";
 import { BentoGrid, BentoGridItem } from "@/components/bento/bento-grid";
 import Skeleton from "@/components/Skeleton/ImageSkeleton";
+import ParentModal from "@/components/Modals/ParentModal";
 
 
 export default function Home() {
@@ -53,11 +54,9 @@ export default function Home() {
         </BentoGrid>
       </section>
       {openModal && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-          <div className="bg-foreground rounded-lg shadow-lg p-2 w-full max-w-xl mx-auto">
-            <ContactModal isOpenModal={isOpenModal} />
-          </div>
-        </div>
+        <ParentModal>
+          <ContactModal isOpenModal={isOpenModal} />
+        </ParentModal>
       )}
     </>
   );

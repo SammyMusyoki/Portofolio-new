@@ -1,13 +1,13 @@
 "use client"
 
-import React, { useContext, useState } from 'react'
-import Block from './Block'
-import { Button } from './ui/button'
+import React, { useContext, useState } from 'react';
+import { Button } from '../ui/button';
 import { CircleCheckBig, Link, Loader, SendHorizontal, X } from 'lucide-react';
 import { Questions } from '@/types/types';
 import { useForm } from "react-hook-form";
-import { toast, useToast } from './ui/use-toast';
 import { sendEmail } from '@/utils/sendEmail';
+import Block from '../Block';
+import { toast } from '../ui/use-toast';
 
 interface modalProps {
     isOpenModal: React.Dispatch<React.SetStateAction<boolean>>
@@ -79,7 +79,7 @@ const ContactModal = ({ isOpenModal }: modalProps) => {
 
 
   return (
-      <Block className="gap-2 bg-accent" style={{ fontFamily: "monospace" }}>
+      <Block className="gap-2 bg-accent mx-2 md:mx-0" style={{ fontFamily: "monospace" }}>
         <div className="flex items-center justify-between bg-background p-2 rounded-t-lg">
           <div className="flex gap-1">
             <p className="w-3 h-3 rounded-full bg-red-500"></p>
