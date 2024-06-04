@@ -34,12 +34,6 @@ const SearchModal = ({ isOpenModal }:SearchModalType) => {
           placeholder='Search here...'
           className='outline-none '
           />
-            <Button
-            variant="default"
-            className="absolute right-0"
-            >
-            <Search size={16} />
-            </Button>
         </div>
         <Button
           onClick={() => isOpenModal(false)}
@@ -49,7 +43,7 @@ const SearchModal = ({ isOpenModal }:SearchModalType) => {
           <X size={16} />
         </Button>
       </div>
-      <div className='grid h-full place-content-center'>
+      <div className='flex justify-center items-center'>
         <p className=''>No search results.</p>
       </div>
     </div>
