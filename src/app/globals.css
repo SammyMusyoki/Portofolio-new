@@ -75,3 +75,12 @@
       @apply bg-background text-foreground;
     }
   }
+
+  .giscus-frame {
+  width: 100%;
+  margin: auto;
+  display: flex;
+}
+
+.giscus {
+}

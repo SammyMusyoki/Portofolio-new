@@ -5,10 +5,9 @@ import Block from './Block'
 import Image from 'next/image'
 import { createAvatar } from '@dicebear/core'
 import { loreleiNeutral } from '@dicebear/collection'
-import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import { Button } from './ui/button'
-import ContactModal from './contactModal'
+
 
 type modalProps = {
     isOpenModal: React.Dispatch<React.SetStateAction<boolean>>
@@ -28,7 +27,7 @@ const HeaderBlock = ({ isOpenModal}: modalProps) => {
         isOpenModal(true)
     }
   return (
-    <Block className='col-span-12 row-span-2 md:col-span-6 relative'>
+    <Block className='col-span-12 row-span-2 md:col-span-6'>
         <Image src={avatar} alt='avator'
         className='mb-4 rounded-full border-2 border-border bg-primary' width='50' height='50'
         />

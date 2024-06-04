@@ -12,7 +12,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 const APP_NAME = "Sammy Musyoki App";
 const APP_DEFAULT_TITLE = "SammyMusyoki";
-const APP_TITLE_TEMPLATE = "%s -Portfolio  App";
+const APP_TITLE_TEMPLATE = "%s";
 const APP_DESCRIPTION = "This is my personal website where i showcase my work.";
 
 export const metadata: Metadata = {
