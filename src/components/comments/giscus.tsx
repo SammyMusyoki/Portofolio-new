@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useRef } from "react";
 import { useTheme } from "next-themes";
 import type { GiscusConfig } from "@/types/types";
-import Giscus from "@giscus/react"
 
 export type GiscusProps = GiscusConfig
 

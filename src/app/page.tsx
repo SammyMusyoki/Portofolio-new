@@ -12,6 +12,7 @@ import { Blogs } from "velite/content";
 import { BentoGrid, BentoGridItem } from "@/components/bento/bento-grid";
 import Skeleton from "@/components/Skeleton/ImageSkeleton";
 import ParentModal from "@/components/Modals/ParentModal";
+import MacBookScroll from "@/components/homepage";
 
 
 export default function Home() {
@@ -21,6 +22,9 @@ export default function Home() {
 
   return (
     <>
+      <div className="overflow-hidden w-full">
+        <MacBookScroll />
+      </div>
       <motion.div
         initial="initial"
         animate="animate"
