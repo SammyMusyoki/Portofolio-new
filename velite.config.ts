@@ -22,6 +22,14 @@ const Blogs = defineCollection({
     })
     .transform(computedFields)
 });
+const About = defineCollection({
+    name: "About",
+    pattern: "about/**/*.mdx",
+    schema: s.object({
+        body: s.mdx()
+    }),
+    single: true
+});
 
 export default defineConfig({
     root: 'src/content',
@@ -32,7 +40,7 @@ export default defineConfig({
         name: "[name]-[hash:6].[ext]",
         clean: true,
     },
-    collections: { Blogs },
+    collections: { Blogs, About },
     mdx: {
         rehypePlugins: [
             rehypeSlug,
