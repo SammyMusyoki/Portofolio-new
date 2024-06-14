@@ -1,34 +1,34 @@
-import React, { FC, ReactNode, useCallback, useState } from 'react'
+// import React, { FC, ReactNode, useCallback, useState } from 'react'
 
-import { KBarProvider, type Action } from "kbar"
-import { KBarButton } from './kbar-button';
+// import { KBarProvider, type Action } from "kbar"
+// import { KBarButton } from './kbar-button';
 
-export interface KBarSearchProps {
-    searchDocumentsPath: string;
-    defaultActions?: Action[]
-}
+// export interface KBarSearchProps {
+//     searchDocumentsPath: string;
+//     defaultActions?: Action[]
+// }
 
-export const KBarSearchProvider: FC<{ 
-    children?: ReactNode,
-    kbarConfig: 
-}> = ({
-    children, kbarConfig
-}) => {
+// export const KBarSearchProvider: FC<{ 
+//     children?: ReactNode,
+//     kbarConfig: 
+// }> = ({
+//     children, kbarConfig
+// }) => {
 
-    const [loaded, setLoaded] = useState(false)
+//     const [loaded, setLoaded] = useState(false)
 
-    const importDOcSearchModalIfNeeded = useCallback(() => {
-        if (KBarModal)
-    })
+//     const importDOcSearchModalIfNeeded = useCallback(() => {
+//         if (KBarModal)
+//     })
 
-    const onOpen = useCallback(() => {
-        importDocSearchModalIfNeeded()
-    }, [])
-  return (
-    <>
-        <KBarProvider>
-            <KBarButton loaded={loaded} onOpen={onOPen}/>
-        </KBarProvider> 
-    </>
-  )
-}
+//     const onOpen = useCallback(() => {
+//         importDocSearchModalIfNeeded()
+//     }, [])
+//   return (
+//     <>
+//         <KBarProvider>
+//             <KBarButton loaded={loaded} onOpen={onOPen}/>
+//         </KBarProvider> 
+//     </>
+//   )
+// }

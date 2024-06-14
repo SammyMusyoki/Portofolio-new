@@ -1,12 +1,12 @@
-import { FC, ReactNode } from "react"
+// import { FC, ReactNode } from "react"
 
-export const KBarModal: FC<{
-    children: ReactNode
-    searchDocumentsPath: string
-}> = ({ searchDocumentsPath, children }) => {
-    return (    
-        <>
-            <
-        </>
-    )
-}
+// export const KBarModal: FC<{
+//     children: ReactNode
+//     searchDocumentsPath: string
+// }> = ({ searchDocumentsPath, children }) => {
+//     return (    
+//         <>
+//             <
+//         </>
+//     )
+// }
