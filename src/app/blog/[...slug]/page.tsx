@@ -1,5 +1,4 @@
 import { Mdx } from '@/components/Mdx';
-import Navbar from '@/components/Navbar';
 import React from 'react'
 import { Blogs } from 'velite/content';
 import { notFound } from "next/navigation";

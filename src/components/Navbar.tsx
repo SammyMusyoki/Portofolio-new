@@ -7,11 +7,9 @@ import Logo from "./Logo";
 import Link from "next/link";
 import BreadCrumbComponent from "./BreadCrumb.component";
 import { useState } from "react";
-import SearchModal from "./Modals/SearchModal";
 
 const Navbar = () => {
   const { setTheme } = useTheme()
-  const [openModal, isOpenModal] = useState<boolean>(false);
 
 
   return (
@@ -23,34 +21,26 @@ const Navbar = () => {
         </div>
         <div>
           {/* NavLinks */}
-          <div className="flex items-center gap-2">
-            <div className="border px-2 py-1 rounded">
-              <Link href="/" className="text-xs">
+          <div className="flex items-center gap-3">
+            <div className="hover:text-primary">
+              <Link href="/" className="text-sm">
                 Home
               </Link>
             </div>
-            <div className="border px-2 py-1 rounded">
-              <Link href="/blog" className="text-xs">
+            <div className="hover:text-primary">
+              <Link href="/blog" className="text-sm">
                 Blog
+              </Link>
+            </div>
+            <div className="hover:text-primary">
+              <Link href="/about" className="text-sm">
+                About
               </Link>
             </div>
           </div>
         </div>
 
         <div className="flex gap-2 items-center">
-          {/* Search Button */}
-          <Button
-            onClick={() => isOpenModal(true)}
-            variant="outline"
-            size="icon"
-          >
-            <Search size="14" />
-          </Button>
-          {openModal && (
-            <div className='absolute top-20 left-0 z-50 border bg-background p-2 bg-opacity-50 rounded-md w-full'>
-                <SearchModal isOpenModal={isOpenModal}/>
-            </div>
-          )}
 
           {/* Theme Changer Button */}
           <DropdownMenu>
@@ -78,7 +68,9 @@ const Navbar = () => {
       {/* Todo: Search Dropdown Modal */}
 
       {/* Breadcrumb ... Home / blog / open-graph-images  */}
-      <BreadCrumbComponent />
+      <div className="flex justify-between items-center">
+        <BreadCrumbComponent /> 
+      </div>
     </>
   );
 }

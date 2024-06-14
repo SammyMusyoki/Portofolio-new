@@ -132,17 +132,17 @@ const components = {
     code: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
         <code
         className={cn(
-            'relative rounded border px-[0.3rem] py-[0.2rem] font-mono text-xs', 
+            'relative rounded border px-[0.3rem] py-[0.2rem] font-mono text-sm', 
             className
         )}
         {...props}
         />
     ),
-    Image,
 }
 
 interface MdxProps {
     code : string;
+    components?: Record<string, React.ComponentType>
 }
 
 const useMDXComponent = (code: string) => {
@@ -150,12 +150,12 @@ const useMDXComponent = (code: string) => {
     return fn({...runtime}).default;
 }
 
-export function Mdx({code}: MdxProps) {
+export function Mdx({code, components}: MdxProps) {
     const Component = useMDXComponent(code)
 
     return (
         <div className='mdx dark:bg-slate-950'>
-            <Component components={components} />
+            <Component components={{Image, ...components}} />
         </div>
     )
 }

@@ -5,9 +5,9 @@ import { Button } from '../ui/button';
 import { CircleCheckBig, Link, Loader, SendHorizontal, X } from 'lucide-react';
 import { Questions } from '@/types/types';
 import { useForm } from "react-hook-form";
-import { sendEmail } from '@/utils/sendEmail';
 import Block from '../Block';
 import { toast } from '../ui/use-toast';
+import { sendEmail } from '@/api/email/route';
 
 interface modalProps {
     isOpenModal: React.Dispatch<React.SetStateAction<boolean>>
