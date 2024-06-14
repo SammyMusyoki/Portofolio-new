@@ -8,7 +8,7 @@ import { SpeakerGrid } from './_components/speakergrid';
 import { Lid } from './_components/lid';
 import { Keypad } from './_components/keyboard';
 import { Trackpad } from './_components/trackpad';
-import { PortfolioViewLight, PortfolioViewDark } from 'public/static';
+import { PortfolioViewLight, PortfolioViewDark } from "./images"
 import { useTheme } from "next-themes";
 
 
