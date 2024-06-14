@@ -71,14 +71,14 @@ const MacBookScroll = ({
   return (
     <div
       ref={ref}
-      className="min-h-[200vh] flex flex-col items-center py-0 md:pb-40 justify-start flex-shrink-0 [perspective:800px] transform md:scale-100  scale-[0.35] sm:scale-50"
+      className="min-h-[110vh] md:min-h-[200vh] flex flex-col items-center py-0 md:pb-40 justify-start flex-shrink-0 [perspective:800px] transform md:scale-100 scale-75"
     >
       <motion.h2
         style={{
           translateY: textTransform,
           opacity: textOpacity,
         }}
-        className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mt-12 mb-20 leading-8"
+        className="text-2xl md:text-3xl lg:text-4xl font-bold text-center md:mt-12 mb-28 leading-8 scale-0"
       >
         Welcome to {<PsalmsHeader />} CodeLand. <br /> Where I craft Software
         Solutions, <br /> <FlipWords sentences={IntroWords} />
