@@ -24,14 +24,19 @@ const Navbar = () => {
         <div>
           {/* NavLinks */}
           <div className="flex items-center gap-2">
-            <div className="border px-2 py-1 rounded">
+            <div className="px-2 py-1 ">
               <Link href="/" className="text-xs">
                 Home
               </Link>
             </div>
-            <div className="border px-2 py-1 rounded">
+            <div className="px-2 py-1 ">
               <Link href="/blog" className="text-xs">
                 Blog
+              </Link>
+            </div>
+            <div className="px-2 py-1 ">
+              <Link href="/about" className="text-xs">
+                About
               </Link>
             </div>
           </div>

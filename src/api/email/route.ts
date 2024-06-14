@@ -1,5 +1,5 @@
 import { toast } from "@/components/ui/use-toast";
-import { Questions } from "@/types/types"
+import { Questions } from "@/types/types";
 
 export const sendEmail = async (questions: Questions[], onClose: () => void) => {
     try {
