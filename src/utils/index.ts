@@ -1,4 +1,4 @@
-// const confetti = require("canvas-confetti")
+
 import confetti from 'canvas-confetti'
 interface ConfettiOptions {
     origin?: { y: number}
