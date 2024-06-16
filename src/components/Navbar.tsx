@@ -16,7 +16,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="flex justify-between relative bg-opacity-10 items-center border-border border  p-4 rounded-xl shadow">
+      <header className="flex justify-between relative bg-opacity-10 items-center border-border border  p-4 rounded-xl shadow">
         {/* Logo */}
         <div className="flex">
           <Logo />
@@ -78,7 +78,7 @@ const Navbar = () => {
             </DropdownMenuContent>
           </DropdownMenu>
         </div>
-      </div>
+      </header>
 
       {/* Todo: Search Dropdown Modal */}
 
